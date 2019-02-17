@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import xlsxwriter
 from pyhunter import PyHunter
 import json
+import sys
 
 '''
 #Для тестов
@@ -36,7 +37,7 @@ count = 2
 game_count = 1
 page = 1
 
-for suchka in range(158):
+for suchka in range(sys.argv[1]):
     try:
         print("PAGE: ", page)
         main_page = BeautifulSoup((requests.get(before + str(page) + after)).text, "html.parser")
